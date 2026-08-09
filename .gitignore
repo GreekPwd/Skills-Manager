@@ -5,5 +5,9 @@ target/
 src-tauri/target/
 playwright-report/
 test-results/
+.playwright-cli/
+*.tsbuildinfo
+vite.config.js
+vite.config.d.ts
 *.log
 
