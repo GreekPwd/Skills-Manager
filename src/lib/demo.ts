@@ -1,0 +1,62 @@
+import type { AgentConnection, Skill } from "./types";
+
+export const demoSkills: Skill[] = [
+  {
+    id: "frontend-design",
+    name: "frontend-design",
+    description: "创建有明确设计方向、可用于生产环境的前端界面。",
+    path: "C:\\Users\\admin\\.skills-manager\\skills\\frontend-design",
+    status: "healthy",
+    source: "git",
+    sourceLabel: "github.com/shared/skills",
+    updatedAt: "今天 09:42",
+    files: 6,
+    agents: ["claude", "codex", "gemini", "cursor"],
+    version: "2.4.1",
+  },
+  {
+    id: "postgres-patterns",
+    name: "postgres-patterns",
+    description: "PostgreSQL 查询优化、索引设计与数据建模模式。",
+    path: "C:\\Users\\admin\\.skills-manager\\skills\\postgres-patterns",
+    status: "update",
+    source: "git",
+    sourceLabel: "github.com/acme/agent-skills",
+    updatedAt: "8月 6日",
+    files: 4,
+    agents: ["claude", "codex", "gemini"],
+    version: "1.8.0",
+  },
+  {
+    id: "release-notes",
+    name: "release-notes",
+    description: "根据提交与变更记录生成结构化发布说明。",
+    path: "C:\\Users\\admin\\.skills-manager\\skills\\release-notes",
+    status: "local",
+    source: "local",
+    sourceLabel: "本地创建",
+    updatedAt: "7月 29日",
+    files: 3,
+    agents: ["claude", "codex"],
+  },
+  {
+    id: "api-review",
+    name: "api-review",
+    description: "审查 REST API 的资源建模、错误语义与兼容性。",
+    path: "C:\\Users\\admin\\.skills-manager\\skills\\api-review",
+    status: "conflict",
+    source: "git",
+    sourceLabel: "github.com/team/standards",
+    updatedAt: "7月 24日",
+    files: 8,
+    agents: ["claude", "cursor"],
+    version: "0.9.3",
+  },
+];
+
+export const demoAgents: AgentConnection[] = [
+  { id: "claude", name: "Claude Code", path: "~/.claude/skills", detected: true, linkedSkills: 4, color: "#d97748" },
+  { id: "codex", name: "Codex", path: "~/.codex/skills", detected: true, linkedSkills: 4, color: "#171b19" },
+  { id: "gemini", name: "Gemini CLI", path: "~/.gemini/skills", detected: true, linkedSkills: 3, color: "#4285f4" },
+  { id: "cursor", name: "Cursor", path: "~/.cursor/skills", detected: true, linkedSkills: 2, color: "#7657d5" },
+];
