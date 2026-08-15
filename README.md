@@ -35,3 +35,5 @@ cargo check --manifest-path src-tauri/Cargo.toml
 ```
 
 Desktop development additionally requires the Rust toolchain, Microsoft C++ build tools, and WebView2. Install Rust with the official Rustup installer before running the Tauri commands.
+
+
