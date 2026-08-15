@@ -4,11 +4,15 @@ import { StatusBadge } from "./StatusBadge";
 
 interface Props {
   skills: Skill[];
+  loading?: boolean;
   selectedId?: string;
   onSelect: (skill: Skill) => void;
 }
 
-export function SkillTable({ skills, selectedId, onSelect }: Props) {
+export function SkillTable({ skills, loading = false, selectedId, onSelect }: Props) {
+  if (loading) {
+    return <div className="empty-list" role="status"><strong>正在加载技能库…</strong><span>正在扫描本机 Skill 目录</span></div>;
+  }
   if (!skills.length) {
     return <div className="empty-list"><strong>没有匹配的技能</strong><span>调整搜索或筛选条件</span></div>;
   }

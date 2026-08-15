@@ -6,6 +6,7 @@ const statusMeta = {
   update: { label: "有更新", icon: ArrowDownToLine },
   conflict: { label: "有冲突", icon: AlertTriangle },
   local: { label: "仅本地", icon: Laptop },
+  invalid: { label: "格式无效", icon: AlertTriangle },
 } satisfies Record<SkillStatus, { label: string; icon: typeof Check }>;
 
 export function StatusBadge({ status }: { status: SkillStatus }) {

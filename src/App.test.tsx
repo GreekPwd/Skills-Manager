@@ -32,4 +32,25 @@ describe("App", () => {
     expect(screen.getByText("Claude Code")).toBeInTheDocument();
     expect(screen.getByText("Gemini CLI")).toBeInTheDocument();
   });
+
+  it("filters the library by status", async () => {
+    const user = userEvent.setup();
+    render(<App />);
+
+    await user.click(screen.getByRole("button", { name: "筛选" }));
+    await user.selectOptions(screen.getByLabelText("按状态筛选"), "local");
+
+    expect(screen.getAllByText("release-notes")).toHaveLength(2);
+    expect(screen.queryByText("frontend-design")).not.toBeInTheDocument();
+  });
+
+  it("opens agent settings from the connections view", async () => {
+    const user = userEvent.setup();
+    render(<App />);
+
+    await user.click(screen.getByRole("button", { name: "Agent 连接" }));
+    await user.click(screen.getByRole("button", { name: "配置 Agent" }));
+
+    expect(screen.getByRole("heading", { name: "设置" })).toBeInTheDocument();
+  });
 });
